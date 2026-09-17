@@ -4,7 +4,12 @@ Maquette de travail pour la refonte du hub editorial d'un site e-commerce mode, 
 
 Document interne de presentation. Ce n'est pas un site de marque, les contenus et visuels sont des exemples de demonstration et la page est en `noindex`.
 
-## Ce que la maquette propose
+## Les deux pages
+
+- `index.html`, le hub du Journal
+- `article-cuir.html`, une page article, accessible depuis le hub
+
+## Ce que le hub propose
 
 1. **Introduction SEO** de deux phrases sous le H1, qui pose le champ lexical du hub
 2. **Recherche interne au Journal**, avec des recherches frequentes cliquables
@@ -13,6 +18,14 @@ Document interne de presentation. Ce n'est pas un site de marque, les contenus e
 5. **Contenu pilier mis en avant**, avec son sommaire et son appel a l'action
 
 Les deux clusters ajoutes aux categories existantes sont Inspiration sacs et Inspiration pret-a-porter femme.
+
+## Ce que la page article propose
+
+1. **Sommaire sticky** dans la colonne de gauche, qui suit la lecture et met en avant la section en cours
+2. **CTA en haut d'article**, juste avant le premier paragraphe
+3. **CTA au sein de l'article**, place apres la section produit la plus engageante
+4. **CTA newsletter** en bas de page, pleine largeur
+5. Fil d'Ariane complet, FAQ en accordeon et articles lies
 
 ## Utilisation
 

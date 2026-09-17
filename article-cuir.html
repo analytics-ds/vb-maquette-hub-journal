@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maquette page article - proposition datashake</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root{--noir:#000;--gris-txt:#757575;--gris-bloc:#efefef;--gris-ligne:#e3e3e3}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+body{margin:0;background:#fff;color:#000;font-family:Inter,Helvetica,Arial,sans-serif;font-weight:300;font-size:16px}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+
+/* header identique au hub */
+header.vb{border-bottom:1px solid var(--gris-ligne)}
+.header_top{display:flex;align-items:center;justify-content:space-between;padding:14px 32px 10px;font-size:13px}
+.header_top .left,.header_top .right{display:flex;gap:26px;align-items:center}
+.header_mid{display:flex;justify-content:center;padding:6px 0 18px}
+.logoVb{font-family:Prata,serif;font-size:30px;letter-spacing:.12em;text-transform:uppercase;line-height:1}
+.header_nav{display:flex;justify-content:center;gap:42px;padding:0 0 16px;font-size:15px}
+.header_nav a{padding-bottom:6px;border-bottom:1px solid transparent}
+.header_nav a:hover,.header_nav a.on{border-color:#000}
+
+.ariane{display:flex;justify-content:center;gap:8px;font-size:13px;color:var(--gris-txt);margin:22px 0 0;flex-wrap:wrap;padding:0 20px}
+.ariane .cur{color:#000}
+
+/* entete article */
+.art_head{max-width:860px;margin:0 auto;padding:34px 20px 0;text-align:center}
+.art_kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gris-txt)}
+.art_head h1{font-family:Prata,"Times New Roman",serif;font-size:52px;font-weight:400;line-height:1.08;text-transform:uppercase;margin:18px 0 0}
+.art_meta{font-size:13px;color:var(--gris-txt);margin-top:16px}
+.art_chapo{font-size:18px;line-height:1.65;margin:24px auto 0;max-width:720px}
+.art_hero{margin:38px 0 0}
+.art_hero img{width:100%;height:clamp(320px,42vw,560px);object-fit:cover}
+
+/* corps en 2 colonnes */
+.art_wrap{max-width:1320px;width:93.75%;margin:0 auto;display:grid;grid-template-columns:250px 1fr;gap:80px;padding:54px 0 0}
+.art_wrap>aside{align-self:stretch}
+
+/* sommaire sticky */
+.toc{position:sticky;top:34px}
+.toc_t{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gris-txt);padding-bottom:14px;border-bottom:1px solid var(--gris-ligne)}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;border-bottom:1px solid var(--gris-ligne)}
+.toc ol a{display:flex;gap:12px;padding:13px 0;font-size:14px;line-height:1.4;color:var(--gris-txt);transition:color .2s}
+.toc ol a::before{content:counter(toc,decimal-leading-zero);font-size:11px;padding-top:3px;color:#b5b5b5}
+.toc ol a:hover{color:#000}
+.toc li.on a{color:#000}
+.toc li.on a::before{color:#000}
+.toc_share a::before{content:none}
+.toc_share{margin-top:22px;font-size:13px;color:var(--gris-txt)}
+.toc_share a{border-bottom:1px solid var(--gris-ligne);padding-bottom:2px;margin-right:12px;display:inline-block}
+
+/* contenu */
+.art_body{max-width:760px}
+.art_body h2{font-family:Prata,"Times New Roman",serif;font-size:34px;font-weight:400;text-transform:uppercase;line-height:1.15;margin:56px 0 18px;scroll-margin-top:30px}
+.art_body h2:first-of-type{margin-top:0}
+.art_body p{font-size:16px;line-height:1.8;margin:0 0 18px}
+.art_body ul{margin:0 0 20px;padding:0;list-style:none}
+.art_body ul li{position:relative;padding:0 0 12px 22px;font-size:16px;line-height:1.7}
+.art_body ul li::before{content:"";position:absolute;left:2px;top:11px;width:5px;height:1px;background:#000}
+.art_body strong{font-weight:500}
+.art_body .inline_lnk{border-bottom:1px solid #000;padding-bottom:1px}
+.art_fig{margin:34px 0}
+.art_fig img{width:100%;max-height:520px;object-fit:cover}
+.art_fig figcaption{font-size:12px;color:var(--gris-txt);margin-top:10px}
+
+/* CTA haut */
+.cta_top{display:flex;align-items:center;gap:26px;background:var(--gris-bloc);padding:22px 26px;margin:0 0 42px}
+.cta_top img{width:84px;height:84px;object-fit:cover;flex:0 0 auto}
+.cta_top .t{flex:1}
+.cta_top .t span{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gris-txt)}
+.cta_top .t b{display:block;font-family:Prata,"Times New Roman",serif;font-size:22px;font-weight:400;text-transform:uppercase;margin-top:6px}
+.btn_noir{display:inline-block;background:#101010;color:#fff;padding:13px 28px;font-size:12px;letter-spacing:.12em;
+  text-transform:uppercase;white-space:nowrap;transition:opacity .2s}
+.btn_noir:hover{opacity:.82}
+.btn_ligne{display:inline-block;border:1px solid #101010;padding:12px 27px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;transition:.2s}
+.btn_ligne:hover{background:#101010;color:#fff}
+
+/* CTA milieu */
+.cta_mid{margin:48px 0;background:#101010;color:#fff;display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
+.cta_mid .im{min-height:270px;position:relative;overflow:hidden}
+.cta_mid .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cta_mid .tx{padding:40px 38px;display:flex;flex-direction:column;justify-content:center}
+.cta_mid span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#a8a8a8}
+.cta_mid h3{font-family:Prata,"Times New Roman",serif;font-size:30px;font-weight:400;text-transform:uppercase;margin:12px 0 14px;line-height:1.15}
+.cta_mid p{font-size:15px;line-height:1.7;color:#dcdcdc;margin:0 0 24px}
+.cta_mid .btn_blanc{display:inline-block;background:#fff;color:#101010;padding:13px 28px;font-size:12px;
+  letter-spacing:.12em;text-transform:uppercase;width:fit-content}
+
+/* FAQ */
+.faq{margin-top:22px;border-top:1px solid var(--gris-ligne)}
+.faq details{border-bottom:1px solid var(--gris-ligne)}
+.faq summary{list-style:none;cursor:pointer;padding:18px 34px 18px 0;position:relative;font-size:17px;line-height:1.45}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:16px;font-size:20px;font-weight:300}
+.faq details[open] summary::after{content:"\2013"}
+.faq .rep{padding:0 0 20px;font-size:16px;line-height:1.75;color:#1a1a1a}
+
+/* newsletter */
+.nl{margin-top:90px;background:var(--gris-bloc);padding:66px 20px}
+.nl_in{max-width:640px;margin:0 auto;text-align:center}
+.nl_in span{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gris-txt)}
+.nl_in h2{font-family:Prata,"Times New Roman",serif;font-size:38px;font-weight:400;text-transform:uppercase;margin:14px 0 12px;line-height:1.12}
+.nl_in p{font-size:15px;line-height:1.7;margin:0 auto 28px;max-width:500px}
+.nl_form{display:flex;gap:0;max-width:520px;margin:0 auto}
+.nl_form input{flex:1;border:1px solid #101010;border-right:0;background:#fff;padding:14px 16px;
+  font-family:Inter,Helvetica,Arial,sans-serif;font-weight:300;font-size:15px;outline:none}
+.nl_form button{border:0;background:#101010;color:#fff;padding:14px 30px;font-size:12px;letter-spacing:.12em;
+  text-transform:uppercase;cursor:pointer;font-family:Inter,Helvetica,Arial,sans-serif}
+.nl_legal{font-size:12px;color:var(--gris-txt);margin-top:16px}
+
+/* articles lies */
+.rel{max-width:1608px;width:93.75%;margin:80px auto 0}
+.rel h2{font-family:Prata,"Times New Roman",serif;font-size:30px;font-weight:400;text-transform:uppercase;margin:0 0 26px}
+.rel_grid{display:flex;flex-wrap:wrap;column-gap:1.86%;row-gap:30px}
+.rel_c{width:32%}
+.rel_c .ph{display:block;position:relative;width:100%;padding-top:100%;overflow:hidden;background:#f6f6f6}
+.rel_c .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.rel_c p.cat{margin:12px 0 0;font-size:16px}
+.rel_c h3{font-family:Prata,"Times New Roman",serif;font-size:26px;font-weight:400;text-transform:uppercase;margin:8px 0 0;line-height:1.2}
+.rel_c .d{font-size:14px;color:var(--gris-txt);margin-top:8px}
+
+footer.vb{border-top:1px solid var(--gris-ligne);margin-top:80px;padding:40px 0 60px;text-align:center;font-size:13px;color:var(--gris-txt)}
+
+/* annotations */
+.dsbar{position:fixed;right:18px;bottom:18px;z-index:99;display:flex;gap:8px;align-items:center;
+  background:#101010;color:#fff;border-radius:8px;padding:8px 12px;font-family:Inter,Arial,sans-serif;font-size:12px}
+.dsbar button{background:#FFFF7D;color:#101010;border:0;border-radius:4px;padding:6px 10px;font-size:12px;cursor:pointer;font-family:inherit}
+.pin{position:absolute;z-index:40;background:#77B0ED;color:#101010;border-radius:4px;padding:6px 12px;
+  font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;font-weight:600;white-space:nowrap;display:none;
+  box-shadow:0 2px 10px rgba(16,16,16,.14)}
+.pin b{background:#101010;color:#fff;border-radius:2px;padding:1px 6px;margin-right:8px}
+body.annot .pin{display:block}
+body.annot .anchor{outline:1px dashed rgba(119,176,237,.7);outline-offset:6px}
+.anchor{position:relative}
+@media print{.dsbar{display:none}}
+@media (max-width:1080px){
+  .art_wrap{grid-template-columns:1fr;gap:30px}
+  .toc{position:static;border-bottom:1px solid var(--gris-ligne);padding-bottom:10px}
+  .cta_mid{grid-template-columns:1fr}
+  .art_head h1{font-size:36px}
+  .rel_c{width:48.5%}
+}
+</style>
+</head>
+<body>
+<div class="ds_banner">Maquette de travail <strong>datashake</strong> pour un projet de refonte du hub Journal. Ce n&rsquo;est pas le site Vanessa Bruno, les contenus et les visuels sont des exemples de d&eacute;monstration.</div>
+
+<header class="vb">
+  <div class="header_top">
+    <div class="left"><a href="#">Boutiques</a><a href="#">Contact</a><a href="#">Seconde main</a></div>
+    <div class="right"><a href="#">Recherche</a><a href="#">Compte</a><a href="#">Panier</a><span> - FRANCE - &euro;</span></div>
+  </div>
+  <div class="header_mid"><span class="logoVb">Vanessa Bruno</span></div>
+  <nav class="header_nav">
+    <a href="#">Nouveaut&eacute;s</a><a href="#">Pr&ecirc;t-&agrave;-porter</a><a href="#">Le Cabas</a>
+    <a href="#">Sacs</a><a href="#">Accessoires</a><a href="#">Atelier personnalisation</a><a href="index.html" class="on">Journal</a>
+  </nav>
+</header>
+
+<nav class="ariane">
+  <a href="#">Accueil</a><span>/</span><a href="index.html">Journal</a><span>/</span>
+  <a href="index.html">Savoir-faire</a><span>/</span><span class="cur">Le cuir, un savoir-faire d&rsquo;exception</span>
+</nav>
+
+<div class="art_head">
+  <div class="art_kicker">Savoir-faire</div>
+  <h1>Le cuir, un savoir-faire d&rsquo;exception</h1>
+  <div class="art_meta">Publi&eacute; le 17/08/26 &middot; 6 min de lecture</div>
+  <p class="art_chapo">Du cuir lisse au nubuck, d&eacute;couvrez les mati&egrave;res, les gestes et le savoir-faire qui donnent vie aux sacs en cuir Vanessa Bruno.</p>
+</div>
+
+<div class="art_hero">
+  <img src="https://www.vanessabruno.fr/img/uploads/cms_page/446/1_1_a11f415c2e782f08c3c06c2aa27cd3fc.jpeg" alt="Atelier de maroquinerie, travail du cuir">
+</div>
+
+<div class="art_wrap">
+
+  <!-- SOMMAIRE STICKY -->
+  <aside class="anchor" id="a-toc">
+    <div class="toc">
+      <div class="toc_t">Sommaire</div>
+      <ol id="toclist">
+        <li><a href="#s1">Le savoir-faire du cuir</a></li>
+        <li><a href="#s2">L&rsquo;excellence d&rsquo;un savoir-faire europ&eacute;en</a></li>
+        <li><a href="#s3">Des cuirs aux personnalit&eacute;s multiples</a></li>
+        <li><a href="#s4">Des pi&egrave;ces pens&eacute;es pour traverser le temps</a></li>
+        <li><a href="#s5">Les questions fr&eacute;quentes</a></li>
+      </ol>
+      <div class="toc_share">Partager <a href="#">Lien</a><a href="#">Pinterest</a></div>
+    </div>
+    <div class="pin" style="left:0;top:-42px"><b>1</b>Sommaire sticky</div>
+  </aside>
+
+  <!-- CORPS -->
+  <div class="art_body">
+
+    <!-- CTA HAUT -->
+    <div class="anchor" id="a-cta1">
+      <div class="cta_top">
+        <img src="https://www.vanessabruno.fr/img/uploads/cms_page/446/1_1_adad85131403f38c8ccbc7011d303427.jpeg" alt="Sac en cuir Vanessa Bruno">
+        <div class="t"><span>L&rsquo;essentiel de cet article</span><b>Nos sacs en cuir</b></div>
+        <a class="btn_noir" href="#">D&eacute;couvrir</a>
+      </div>
+      <div class="pin" style="right:0;top:-40px"><b>2</b>CTA en haut d&rsquo;article</div>
+    </div>
+
+    <h2 id="s1">Le savoir-faire du cuir</h2>
+    <p>Chez Vanessa Bruno, le sac en cuir est bien plus qu&rsquo;un accessoire, c&rsquo;est une pi&egrave;ce pens&eacute;e pour accompagner le quotidien et traverser les ann&eacute;es. Imagin&eacute;s dans notre studio parisien, les mod&egrave;les de la Maison sont fa&ccedil;onn&eacute;s en Europe, principalement en Italie et au Portugal.</p>
+    <p>Du cuir lisse au nubuck, du cuir velours au cuir matelass&eacute; ou tress&eacute;, chaque mati&egrave;re poss&egrave;de ses caract&eacute;ristiques propres et apporte une identit&eacute; particuli&egrave;re aux sacs Vanessa Bruno.</p>
+
+    <h2 id="s2">L&rsquo;excellence d&rsquo;un savoir-faire europ&eacute;en</h2>
+    <figure class="art_fig">
+      <img src="https://www.vanessabruno.fr/img/uploads/cms_page/446/1_1_adad85131403f38c8ccbc7011d303427.jpeg" alt="Peaux s&eacute;lectionn&eacute;es en tannerie">
+      <figcaption>Les peaux sont issues de tanneries certifi&eacute;es Leather Working Group.</figcaption>
+    </figure>
+    <p>La confection d&rsquo;un sac en cuir repose sur une succession de gestes pr&eacute;cis, du choix de la peau jusqu&rsquo;aux derni&egrave;res finitions. Une attention particuli&egrave;re est port&eacute;e aux mati&egrave;res, aux proportions et aux d&eacute;tails qui donnent &agrave; chaque mod&egrave;le sa silhouette.</p>
+    <p>Nos sacs en cuir sont principalement fabriqu&eacute;s :</p>
+    <ul>
+      <li><strong>En Italie</strong>, dans des ateliers sp&eacute;cialis&eacute;s en maroquinerie.</li>
+      <li><strong>Au Portugal</strong>, pour certains mod&egrave;les en cuir.</li>
+      <li>&Agrave; partir de <strong>peaux issues de tanneries certifi&eacute;es LWG</strong> (Leather Working Group), s&eacute;lectionn&eacute;es pour la qualit&eacute; de leurs cuirs, leur souplesse et leur capacit&eacute; &agrave; se patiner naturellement au fil du temps.</li>
+    </ul>
+    <p>Cette fabrication europ&eacute;enne s&rsquo;inscrit dans une recherche de qualit&eacute; et de pr&eacute;cision, adapt&eacute;e aux sp&eacute;cificit&eacute;s de chaque mati&egrave;re.</p>
+
+    <h2 id="s3">Des cuirs aux personnalit&eacute;s multiples</h2>
+    <figure class="art_fig">
+      <img src="https://www.vanessabruno.fr/img/uploads/cms_page/446/1_1_118d1934fd54972f8c7a359c2e59c511.jpeg" alt="D&eacute;tail de cuir tress&eacute;">
+    </figure>
+    <p>Le choix du cuir participe pleinement &agrave; l&rsquo;identit&eacute; d&rsquo;un mod&egrave;le. Chez Vanessa Bruno, plusieurs finitions et textures sont travaill&eacute;es :</p>
+    <ul>
+      <li><strong>Cuir lisse</strong>, une surface r&eacute;guli&egrave;re et &eacute;l&eacute;gante qui souligne les lignes du sac. On le retrouve notamment sur l&rsquo;<a class="inline_lnk" href="#">Othilia</a>, r&eacute;alis&eacute; en cuir d&rsquo;agneau, ainsi que sur le <a class="inline_lnk" href="#">Jess</a>.</li>
+      <li><strong>Cuir matelass&eacute;</strong>, caract&eacute;ristique du <a class="inline_lnk" href="#">Moon</a>, son relief structure la silhouette et lui donne son aspect graphique embl&eacute;matique. On le retrouve &eacute;galement sur nos <a class="inline_lnk" href="#">Cabas</a>.</li>
+      <li><strong>Cuir nubuck</strong>, obtenu par pon&ccedil;age de la face ext&eacute;rieure du cuir, il pr&eacute;sente un toucher doux et un aspect velout&eacute;. Le <a class="inline_lnk" href="#">Lune</a> est notamment propos&eacute; dans un cuir de vachette nubuck l&eacute;g&egrave;rement grain&eacute;.</li>
+      <li><strong>Cuir velours</strong>, &eacute;galement appel&eacute; daim ou cuir su&eacute;d&eacute;, il est travaill&eacute; sur la face int&eacute;rieure de la peau pour obtenir son aspect doux et mat. Il se retrouve sur le <a class="inline_lnk" href="#">Jess</a>, le <a class="inline_lnk" href="#">Mathilde</a> et le <a class="inline_lnk" href="#">Cabas Daily</a>.</li>
+      <li><strong>Cuir tress&eacute;</strong>, obtenu par entrelacement de lani&egrave;res de cuir, il apporte une dimension graphique et artisanale. On le retrouve sur l&rsquo;anse du <a class="inline_lnk" href="#">Jess</a>, le <a class="inline_lnk" href="#">Moon</a>, ainsi que sur certains accessoires de la Maison.</li>
+    </ul>
+    <p>Ces diff&eacute;rentes mati&egrave;res permettent &agrave; Vanessa Bruno de faire &eacute;voluer ses mod&egrave;les tout en conservant leurs lignes et leur identit&eacute;.</p>
+
+    <!-- CTA MILIEU -->
+    <div class="anchor" id="a-cta2">
+      <div class="cta_mid">
+        <div class="im"><img src="https://www.vanessabruno.fr/img/uploads/cms_page/199/1286622806a7db2e453822.png" alt="Sac Moon en cuir matelass&eacute;"></div>
+        <div class="tx">
+          <span>La pi&egrave;ce de cet article</span>
+          <h3>Le Moon en cuir matelass&eacute;</h3>
+          <p>Son relief structure la silhouette et signe l&rsquo;allure graphique du mod&egrave;le. Disponible en plusieurs coloris et finitions de cuir.</p>
+          <a class="btn_blanc" href="#">Voir le mod&egrave;le</a>
+        </div>
+      </div>
+      <div class="pin" style="left:0;top:22px"><b>3</b>CTA au sein de l&rsquo;article</div>
+    </div>
+
+    <h2 id="s4">Des pi&egrave;ces pens&eacute;es pour traverser le temps</h2>
+    <p>Le cuir est une mati&egrave;re vivante qui &eacute;volue avec son usage. Sa texture, sa souplesse et sa patine peuvent se transformer au fil des ann&eacute;es.</p>
+    <p>Chaque type de cuir n&eacute;cessite cependant un entretien adapt&eacute; :</p>
+    <ul>
+      <li><strong>Cuir lisse</strong>, d&eacute;poussi&eacute;rage doux et produits sp&eacute;cialement con&ccedil;us pour le cuir.</li>
+      <li><strong>Nubuck</strong>, brossage avec une brosse adapt&eacute;e et protection avec un imperm&eacute;abilisant sp&eacute;cifique.</li>
+      <li><strong>Cuir velours</strong>, entretien d&eacute;licat et protection contre l&rsquo;humidit&eacute;.</li>
+      <li><strong>Cuir matelass&eacute; ou craquel&eacute;</strong>, entretien adapt&eacute; aux recommandations propres au mod&egrave;le.</li>
+    </ul>
+    <p>Le bon entretien permet de pr&eacute;server la mati&egrave;re, sa texture et la forme du sac au fil du temps. Retrouvez le d&eacute;tail des gestes dans notre <a class="inline_lnk" href="#">guide d&rsquo;entretien du cuir</a>.</p>
+
+    <h2 id="s5">Les questions fr&eacute;quentes</h2>
+    <div class="faq">
+      <details open>
+        <summary>O&ugrave; sont fabriqu&eacute;s les sacs en cuir Vanessa Bruno ?</summary>
+        <div class="rep">Les sacs Vanessa Bruno sont imagin&eacute;s dans notre studio parisien puis fa&ccedil;onn&eacute;s en Europe. Ils sont principalement fabriqu&eacute;s en Italie, dans des ateliers sp&eacute;cialis&eacute;s en maroquinerie, et au Portugal pour certains mod&egrave;les. Les peaux sont issues de tanneries italiennes et portugaises s&eacute;lectionn&eacute;es pour la qualit&eacute; de leurs cuirs, leur souplesse et leur capacit&eacute; &agrave; se patiner naturellement.</div>
+      </details>
+      <details>
+        <summary>Quelle est la diff&eacute;rence entre le nubuck et le cuir velours ?</summary>
+        <div class="rep">Le nubuck et le cuir velours pr&eacute;sentent tous deux un aspect doux et velout&eacute;, mais ils ne sont pas travaill&eacute;s sur la m&ecirc;me face du cuir. Le nubuck est pon&ccedil;&eacute; sur le c&ocirc;t&eacute; fleur, la face ext&eacute;rieure de la peau. Le cuir velours, aussi appel&eacute; daim ou cuir su&eacute;d&eacute;, est travaill&eacute; sur sa face int&eacute;rieure. Leur aspect et leur toucher diff&egrave;rent et chacun n&eacute;cessite un entretien sp&eacute;cifique.</div>
+      </details>
+      <details>
+        <summary>Comment entretenir un sac en cuir ?</summary>
+        <div class="rep">Avant la premi&egrave;re utilisation, imperm&eacute;abilisez votre sac avec un produit adapt&eacute; au cuir. Pour l&rsquo;entretien courant, d&eacute;poussi&eacute;rez-le d&eacute;licatement avec un chiffon doux et utilisez des produits adapt&eacute;s &agrave; sa mati&egrave;re. Chaque type de cuir n&eacute;cessite des gestes sp&eacute;cifiques, retrouvez-les dans notre <a class="inline_lnk" href="#">guide d&rsquo;entretien des sacs en cuir</a>.</div>
+      </details>
+      <details>
+        <summary>Comment ranger mon sac en cuir ?</summary>
+        <div class="rep">Lorsque vous ne le portez pas, rangez votre sac dans son pochon, &agrave; l&rsquo;abri de la lumi&egrave;re, de l&rsquo;humidit&eacute; et des sources de chaleur. Vous pouvez &eacute;galement le rembourrer l&eacute;g&egrave;rement afin de pr&eacute;server sa forme.</div>
+      </details>
+    </div>
+
+  </div>
+</div>
+
+<!-- NEWSLETTER -->
+<section class="nl anchor" id="a-nl">
+  <div class="nl_in">
+    <span>La lettre du Journal</span>
+    <h2>Nos savoir-faire, dans votre bo&icirc;te mail</h2>
+    <p>Une fois par mois, nos guides d&rsquo;achat, nos conseils d&rsquo;entretien et les coulisses de nos ateliers. Rien d&rsquo;autre.</p>
+    <form class="nl_form" onsubmit="return false">
+      <input type="email" placeholder="Votre adresse e-mail" aria-label="Votre adresse e-mail">
+      <button type="submit">Je m&rsquo;inscris</button>
+    </form>
+    <div class="nl_legal">En vous inscrivant, vous acceptez de recevoir nos actualit&eacute;s. D&eacute;sinscription en un clic.</div>
+  </div>
+  <div class="pin" style="left:24px;top:24px"><b>4</b>CTA newsletter en bas de page</div>
+</section>
+
+<!-- ARTICLES LIES -->
+<section class="rel">
+  <h2>&Agrave; lire aussi</h2>
+  <div class="rel_grid">
+    <article class="rel_c">
+      <a class="ph" href="#"><img src="https://www.vanessabruno.fr/img/uploads/cms_page/186/260006706a7204728385d.jpg" alt="L'entretien du cuir"></a>
+      <p class="cat">Guide d&rsquo;entretien</p><h3>L&rsquo;entretien du cuir</h3>
+      <div class="d">Nettoyage, imperm&eacute;abilisation, cr&egrave;mes, notre guide pour faire durer vos accessoires.</div>
+    </article>
+    <article class="rel_c">
+      <a class="ph" href="#"><img src="https://www.vanessabruno.fr/img/uploads/cms_page/199/1286622806a7db2e453822.png" alt="L'iconique sac Moon"></a>
+      <p class="cat">Savoir-faire</p><h3>L&rsquo;iconique sac Moon</h3>
+      <div class="d">Un sac citadin qui passe du bureau &agrave; la soir&eacute;e, d&eacute;clin&eacute; en cuir, lin ou raphia.</div>
+    </article>
+    <article class="rel_c">
+      <a class="ph" href="#"><img src="https://www.vanessabruno.fr/img/uploads/cms_page/433/8769635426a79df527c1c5.jpg" alt="Comment entretenir et pr&eacute;server son sac"></a>
+      <p class="cat">Guide d&rsquo;entretien</p><h3>Comment entretenir et pr&eacute;server son sac ?</h3>
+      <div class="d">Les gestes simples pour le garder des ann&eacute;es.</div>
+    </article>
+  </div>
+</section>
+
+<footer class="vb">Maquette de travail datashake, &agrave; partir de la charte du Journal Vanessa Bruno. Document interne de pr&eacute;sentation.</footer>
+
+<div class="dsbar"><span>Maquette datashake</span><button id="tgl">Annotations</button></div>
+
+<script>
+/* scrollspy du sommaire */
+var secs=[].slice.call(document.querySelectorAll('.art_body h2'));
+var lis=[].slice.call(document.querySelectorAll('#toclist li'));
+function spy(){
+  var cur=0;
+  secs.forEach(function(s,i){if(s.getBoundingClientRect().top<=170){cur=i}});
+  lis.forEach(function(l,i){l.classList.toggle('on',i===cur)});
+}
+window.addEventListener('scroll',spy,{passive:true});
+window.addEventListener('resize',spy);spy();
+/* annotations */
+document.getElementById('tgl').addEventListener('click',function(){document.body.classList.toggle('annot')});
+document.addEventListener('keydown',function(e){if(e.key==='a'){document.body.classList.toggle('annot')}});
+if(location.hash.indexOf('annot')>-1||location.search.indexOf('annot')>-1){document.body.classList.add('annot')}
+</script>
+</body>
+</html>
