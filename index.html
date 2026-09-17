@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maquette hub Journal - proposition datashake</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --noir:#000;
+  --gris-txt:#757575;
+  --gris-bloc:#efefef;
+  --gris-ligne:#e3e3e3;
+  --max:1608px;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased}
+body{margin:0;background:#fff;color:#000;font-family:Inter,Helvetica,Arial,sans-serif;font-weight:300;font-size:16px}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:var(--max);width:93.75%;margin:0 auto}
+
+/* ---------- HEADER (repris du site) ---------- */
+header.vb{border-bottom:1px solid var(--gris-ligne)}
+.header_top{display:flex;align-items:center;justify-content:space-between;padding:14px 32px 10px;font-size:13px;color:var(--noir)}
+.header_top .left,.header_top .right{display:flex;gap:26px;align-items:center}
+.header_top a{font-family:Inter,Helvetica,Arial,sans-serif;font-weight:300}
+.header_mid{display:flex;justify-content:center;padding:6px 0 18px}
+.logoVb{font-family:Prata,serif;font-size:30px;letter-spacing:.12em;text-transform:uppercase;line-height:1}
+.header_nav{display:flex;justify-content:center;gap:42px;padding:0 0 16px;font-family:Inter,Helvetica,Arial,sans-serif;font-size:15px;font-weight:300}
+.header_nav a{padding-bottom:6px;border-bottom:1px solid transparent}
+.header_nav a:hover,.header_nav a.on{border-color:#000}
+
+/* ---------- FIL D ARIANE + TITRE ---------- */
+.ariane{display:flex;justify-content:center;gap:8px;font-size:13px;color:var(--gris-txt);margin:22px 0 40px}
+.ariane .cur{color:#000}
+h1.title{font-family:Prata,"Times New Roman",serif;font-size:60px;font-weight:400;line-height:1;text-transform:uppercase;text-align:center;margin:40px 0 0}
+
+/* ---------- 1. INTRO SEO ---------- */
+.intro_seo{max-width:820px;margin:22px auto 0;text-align:center;font-family:Inter,Helvetica,Arial,sans-serif;font-weight:300;font-size:17px;line-height:1.62;color:#1a1a1a}
+
+/* ---------- 2. RECHERCHE BLOG ---------- */
+.search_blog{max-width:640px;margin:34px auto 0;position:relative}
+.search_blog input{width:100%;border:0;border-bottom:1px solid #000;background:transparent;padding:12px 40px 12px 2px;
+  font-family:Inter,Helvetica,Arial,sans-serif;font-weight:300;font-size:16px;outline:none}
+.search_blog input::placeholder{color:var(--gris-txt)}
+.search_blog .ico{position:absolute;right:4px;top:10px;width:18px;height:18px;opacity:.8}
+.search_hints{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px}
+.search_hints span{font-size:12px;color:var(--gris-txt);margin-right:2px;align-self:center}
+.search_hints button{border:1px solid var(--gris-ligne);background:#fff;border-radius:999px;padding:6px 14px;
+  font-family:Inter,Helvetica,Arial,sans-serif;font-weight:300;font-size:13px;cursor:pointer;transition:.2s}
+.search_hints button:hover{border-color:#000}
+
+/* ---------- 3. ACCORDEON CLUSTERS ---------- */
+.clusters{max-width:1180px;margin:56px auto 0;border-top:1px solid var(--gris-ligne)}
+.cl_item{border-bottom:1px solid var(--gris-ligne)}
+.cl_head{width:100%;background:none;border:0;cursor:pointer;display:flex;align-items:baseline;gap:14px;
+  padding:20px 4px;text-align:left;font-family:Prata,"Times New Roman",serif;font-size:26px;text-transform:uppercase;letter-spacing:.01em}
+.cl_head .count{font-family:Inter,Helvetica,Arial,sans-serif;font-size:13px;font-weight:300;color:var(--gris-txt);text-transform:none;letter-spacing:0}
+.cl_head .plus{margin-left:auto;font-family:Inter,Helvetica,Arial,sans-serif;font-size:22px;font-weight:300;line-height:1;transition:transform .25s}
+.cl_item.open .cl_head .plus{transform:rotate(45deg)}
+.cl_body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.cl_item.open .cl_body{max-height:900px}
+.cl_inner{padding:4px 4px 34px;display:grid;grid-template-columns:0.82fr 1.18fr;gap:56px}
+.cl_desc{font-size:15px;line-height:1.65;color:#1a1a1a}
+.cl_desc .pilier_lnk{display:inline-block;margin-top:16px;border-bottom:1px solid #000;padding-bottom:2px;
+  font-family:Inter,Helvetica,Arial,sans-serif;font-size:14px;font-weight:400}
+.cl_links{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-content:start}
+.cl_links a{display:flex;align-items:center;justify-content:space-between;gap:14px;background:#efefef;
+  padding:15px 18px;font-size:15px;line-height:1.35;color:#1a1a1a;transition:background .2s,color .2s}
+.cl_links a::after{content:"";flex:0 0 auto;width:14px;height:8px;background:#1a1a1a;
+  -webkit-mask:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 8'%3E%3Cpath d='M0 4h12M9 1l3 3-3 3' fill='none' stroke='%23000' stroke-width='1'/%3E%3C/svg%3E") no-repeat center/contain;
+  mask:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 8'%3E%3Cpath d='M0 4h12M9 1l3 3-3 3' fill='none' stroke='%23000' stroke-width='1'/%3E%3C/svg%3E") no-repeat center/contain;
+  transition:background .2s,transform .2s}
+.cl_links a:hover{background:#101010;color:#fff}
+.cl_links a:hover::after{background:#fff;transform:translateX(3px)}
+.cl_note{grid-column:1/-1;font-size:12px;color:var(--gris-txt)}
+
+/* ---------- 4. PILIER MIS EN AVANT ---------- */
+.pilier{margin-top:70px;background:var(--gris-bloc)}
+.pilier_grid{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
+.pilier_img{position:relative;overflow:hidden;min-height:520px}
+.pilier_img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.pilier_txt{padding:66px 8% 60px;display:flex;flex-direction:column;justify-content:center}
+.pilier_kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gris-txt);margin-bottom:18px}
+.pilier_txt h2{font-family:Prata,"Times New Roman",serif;font-size:44px;font-weight:400;line-height:1.1;text-transform:uppercase;margin:0 0 20px}
+.pilier_txt p{font-size:16px;line-height:1.7;margin:0 0 22px;max-width:520px}
+.pilier_sommaire{list-style:none;margin:0 0 30px;padding:0;border-top:1px solid #dcdcdc;max-width:520px}
+.pilier_sommaire li{border-bottom:1px solid #dcdcdc}
+.pilier_sommaire a{display:flex;justify-content:space-between;gap:16px;padding:11px 0;font-size:15px}
+.pilier_sommaire a span.n{color:var(--gris-txt);font-size:13px}
+.cta_noir{display:inline-block;background:#000;color:#fff;padding:14px 34px;font-size:13px;letter-spacing:.12em;
+  text-transform:uppercase;width:fit-content}
+
+/* ---------- 5. GRILLE ARTICLES (reprise du site) ---------- */
+.grid_head{display:flex;align-items:baseline;justify-content:space-between;margin:70px auto 22px;max-width:var(--max);width:93.75%}
+.grid_head h2{font-family:Prata,"Times New Roman",serif;font-size:30px;font-weight:400;text-transform:uppercase;margin:0}
+.grid_head .cnt{font-size:13px;color:var(--gris-txt)}
+.grid{max-width:var(--max);width:93.75%;margin:0 auto 60px;display:flex;flex-wrap:wrap;column-gap:1.86%;row-gap:44px}
+.card{width:32%}
+.card .ph{display:block;position:relative;width:100%;padding-top:100%;overflow:hidden;background:#f6f6f6}
+.card .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.card p.cat{margin:12px 0 0;font-size:16px;font-weight:300}
+.card h3{font-family:Prata,"Times New Roman",serif;font-size:30px;font-weight:400;text-transform:uppercase;line-height:1.2;margin:10px 0 0}
+.card .date,.card .desc{font-size:14px;color:var(--gris-txt);margin-top:8px;line-height:1.5}
+.card .lire{display:inline-block;margin-top:12px;font-size:13px;border-bottom:1px solid #000;padding-bottom:2px}
+.nores{display:none;width:100%;text-align:center;color:var(--gris-txt);font-size:15px;padding:40px 0}
+.loadmore{text-align:center;margin:0 0 90px}
+
+footer.vb{border-top:1px solid var(--gris-ligne);padding:40px 0 60px;text-align:center;font-size:13px;color:var(--gris-txt)}
+
+.ds_banner{background:#101010;color:#fff;font-family:Inter,Arial,sans-serif;font-size:13px;line-height:1.5;
+  text-align:center;padding:11px 20px}
+.ds_banner strong{color:#FFFF7D;font-weight:600}
+/* ---------- ANNOTATIONS DATASHAKE (masquables) ---------- */
+.dsbar{position:fixed;right:18px;bottom:18px;z-index:99;display:flex;gap:8px;align-items:center;
+  background:#101010;color:#fff;border-radius:8px;padding:8px 12px;font-family:Inter,Arial,sans-serif;font-size:12px}
+.dsbar button{background:#FFFF7D;color:#101010;border:0;border-radius:4px;padding:6px 10px;font-size:12px;cursor:pointer;font-family:inherit}
+.pin{position:absolute;z-index:40;background:#77B0ED;color:#101010;border-radius:4px;padding:6px 12px;
+  font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;font-weight:600;letter-spacing:.01em;white-space:nowrap;
+  display:none;box-shadow:0 2px 10px rgba(16,16,16,.14)}
+.pin b{background:#101010;color:#fff;border-radius:2px;padding:1px 6px;margin-right:8px;font-weight:600}
+body.annot .pin{display:block}
+body.annot .anchor{outline:1px dashed rgba(119,176,237,.7);outline-offset:6px}
+.anchor{position:relative}
+@media print{.dsbar{display:none}}
+@media (max-width:1100px){
+  .cl_inner{grid-template-columns:1fr;gap:20px}
+  .pilier_grid{grid-template-columns:1fr}
+  .pilier_img{min-height:340px;position:relative}
+  .card{width:48.5%}
+  h1.title{font-size:42px}
+}
+</style>
+</head>
+<body>
+<div class="ds_banner">Maquette de travail <strong>datashake</strong> pour un projet de refonte du hub Journal. Ce n&rsquo;est pas le site Vanessa Bruno, les contenus et les visuels sont des exemples de d&eacute;monstration.</div>
+
+<header class="vb">
+  <div class="header_top">
+    <div class="left"><a href="#">Boutiques</a><a href="#">Contact</a><a href="#">Seconde main</a></div>
+    <div class="right"><a href="#">Recherche</a><a href="#">Compte</a><a href="#">Panier</a><span> - FRANCE - &euro;</span></div>
+  </div>
+  <div class="header_mid"><span class="logoVb">Vanessa Bruno</span></div>
+  <nav class="header_nav">
+    <a href="#">Nouveaut&eacute;s</a><a href="#">Pr&ecirc;t-&agrave;-porter</a><a href="#">Le Cabas</a>
+    <a href="#">Sacs</a><a href="#">Accessoires</a><a href="#">Atelier personnalisation</a><a href="#" class="on">Journal</a>
+  </nav>
+</header>
+
+<nav class="ariane"><a href="#">Accueil</a><span>/</span><span class="cur">Journal</span></nav>
+
+<h1 class="title">Journal</h1>
+
+<!-- 1. INTRO SEO -->
+<div class="anchor" id="a-intro">
+  <p class="intro_seo">Le Journal Vanessa Bruno r&eacute;unit nos guides pour choisir un sac, composer un vestiaire et prendre soin de chaque pi&egrave;ce, du cuir grain&eacute; au raphia tress&eacute; &agrave; la main. Vous y retrouvez nos conseils d&rsquo;entretien, nos savoir-faire d&rsquo;atelier et les inspirations de saison de la maison.</p>
+  <div class="pin" style="left:16px;top:-4px"><b>1</b>Intro SEO</div>
+</div>
+
+<!-- 2. RECHERCHE -->
+<div class="anchor" id="a-search">
+  <div class="search_blog">
+    <input id="q" type="search" placeholder="Rechercher un article, un conseil, une mati&egrave;re" autocomplete="off">
+    <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.3"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
+    <div class="search_hints">
+      <span>Recherches fr&eacute;quentes</span>
+      <button data-q="cuir">Cuir</button><button data-q="raphia">Raphia</button>
+      <button data-q="cabas">Cabas</button><button data-q="entretien">Entretien</button><button data-q="lin">Lin</button>
+    </div>
+  </div>
+  <div class="pin" style="left:16px;top:28px"><b>2</b>Recherche interne</div>
+</div>
+
+<!-- 3. ACCORDEON CLUSTERS -->
+<div class="anchor" id="a-clusters">
+  <div class="clusters" id="acc">
+
+    <div class="cl_item open">
+      <button class="cl_head">Inspiration sacs <span class="count">12 articles</span><span class="plus">+</span></button>
+      <div class="cl_body"><div class="cl_inner">
+        <div class="cl_desc">
+          Choisir un sac, c&rsquo;est choisir une mati&egrave;re, un format et un usage. Nos guides comparent le cuir et le raphia, les formats du quotidien et les allures de saison, pour trouver la pi&egrave;ce qui vous suivra des ann&eacute;es.
+          <a class="pilier_lnk" href="#pilier">Lire le guide, comment choisir son sac en cuir</a>
+        </div>
+        <div class="cl_links">
+          <a href="#">Comment choisir son sac en cuir ?</a>
+          <a href="#">Quel format de sac pour le quotidien ?</a>
+          <a href="#">Le Cabas, comment le porter</a>
+          <a href="#">Cuir grain&eacute; ou cuir lisse, que choisir</a>
+          <a href="#">Le sac en raphia, l&rsquo;allure de l&rsquo;&eacute;t&eacute;</a>
+          <a href="#">Bien choisir la taille de son cabas</a>
+          <a href="#">Sac port&eacute; &eacute;paule ou port&eacute; main</a>
+          <a href="#">Quel sac pour un voyage en week-end</a>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="cl_item">
+      <button class="cl_head">Inspiration pr&ecirc;t-&agrave;-porter femme <span class="count">10 articles</span><span class="plus">+</span></button>
+      <div class="cl_body"><div class="cl_inner">
+        <div class="cl_desc">
+          Des pi&egrave;ces qui se portent longtemps et se combinent simplement. Nos guides de style abordent les coupes, les mati&egrave;res et les associations, saison par saison.
+          <a class="pilier_lnk" href="#">Lire le guide, construire un vestiaire durable</a>
+        </div>
+        <div class="cl_links">
+          <a href="#">Comment porter la robe longue</a>
+          <a href="#">Associer les imprim&eacute;s sans faute de go&ucirc;t</a>
+          <a href="#">La maille de mi-saison</a>
+          <a href="#">Les intemporels du vestiaire</a>
+          <a href="#">Quelle veste pour la rentr&eacute;e</a>
+          <a href="#">Le lin, comment le porter en ville</a>
+          <a href="#">Trouver sa taille en pr&ecirc;t-&agrave;-porter</a>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="cl_item">
+      <button class="cl_head">Guide d&rsquo;entretien <span class="count">9 articles</span><span class="plus">+</span></button>
+      <div class="cl_body"><div class="cl_inner">
+        <div class="cl_desc">Faire durer une pi&egrave;ce fait partie du produit. Chaque mati&egrave;re a son geste, sa fr&eacute;quence et ses erreurs &agrave; &eacute;viter.</div>
+        <div class="cl_links">
+          <a href="#">Comment entretenir et pr&eacute;server son sac ?</a>
+          <a href="#">L&rsquo;entretien du raphia</a>
+          <a href="#">Entretien du lin</a>
+          <a href="#">Nettoyer un sac en cuir clair</a>
+          <a href="#">Ranger ses sacs hors saison</a>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="cl_item">
+      <button class="cl_head">Savoir-faire <span class="count">5 articles</span><span class="plus">+</span></button>
+      <div class="cl_body"><div class="cl_inner">
+        <div class="cl_desc">Les ateliers, les mati&egrave;res et les mains derri&egrave;re chaque pi&egrave;ce, de Madagascar aux tanneries europ&eacute;ennes.</div>
+        <div class="cl_links">
+          <a href="#">Le savoir-faire du raphia &agrave; Madagascar</a>
+          <a href="#">Le cuir, un savoir-faire d&rsquo;exception</a>
+          <a href="#">La fabrication du Cabas, &eacute;tape par &eacute;tape</a>
+          <a href="#">Nos mati&egrave;res et leur provenance</a>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="cl_item">
+      <button class="cl_head">Nos incontournables <span class="count">16 articles</span><span class="plus">+</span></button>
+      <div class="cl_body"><div class="cl_inner">
+        <div class="cl_desc">Les pi&egrave;ces embl&eacute;matiques de la maison, leur histoire et les fa&ccedil;ons de les porter.</div>
+        <div class="cl_links">
+          <a href="#">Le Cabas, histoire d&rsquo;une ic&ocirc;ne</a><a href="#">Le Jess Raphia</a>
+          <a href="#">La ligne Ath&eacute;</a><a href="#">Nos pi&egrave;ces en cuir &agrave; garder &agrave; vie</a>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="cl_item">
+      <button class="cl_head">Actualit&eacute;s <span class="count">51 articles</span><span class="plus">+</span></button>
+      <div class="cl_body"><div class="cl_inner">
+        <div class="cl_desc">Collections, collaborations et rendez-vous de la maison.</div>
+        <div class="cl_links">
+          <a href="#">Modern Boho, collection Automne-Hiver &lsquo;26</a><a href="#">&laquo; Mon journal de Cadaqu&eacute;s &raquo;</a>
+          <a href="#">&laquo; Now is a good time &raquo;</a><a href="#">Nouvelle collection Summer &lsquo;26</a>
+        </div>
+      </div></div>
+    </div>
+
+  </div>
+  <div class="pin" style="left:16px;top:44px"><b>3</b>Clusters en accord&eacute;on</div>
+</div>
+
+<!-- 4. PILIER -->
+<section class="pilier anchor" id="pilier">
+  <div class="pilier_grid">
+    <div class="pilier_img"><img src="https://www.vanessabruno.fr/img/uploads/cms_page/446/12469212506a83165f4494d.jpg" alt="Le cuir, un savoir-faire d'exception"></div>
+    <div class="pilier_txt">
+      <div class="pilier_kicker">Le guide du Journal &middot; Inspiration sacs</div>
+      <h2>Comment choisir son sac en cuir ?</h2>
+      <p>Grain, tannage, format, doublure et entretien. Tout ce qui fait qu&rsquo;un sac en cuir vous accompagne dix ans plut&ocirc;t qu&rsquo;une saison, expliqu&eacute; par nos ateliers.</p>
+      <ul class="pilier_sommaire">
+        <li><a href="#">Reconna&icirc;tre un beau cuir <span class="n">01</span></a></li>
+        <li><a href="#">Choisir le bon format selon ses journ&eacute;es <span class="n">02</span></a></li>
+        <li><a href="#">Cuir grain&eacute;, liss&eacute; ou velours <span class="n">03</span></a></li>
+        <li><a href="#">Les gestes d&rsquo;entretien qui changent tout <span class="n">04</span></a></li>
+      </ul>
+      <a class="cta_noir" href="#">Lire le guide</a>
+    </div>
+  </div>
+  <div class="pin" style="left:16px;top:16px"><b>4</b>Contenu pilier</div>
+</section>
+
+<!-- 5. GRILLE -->
+<div class="grid_head"><h2>Tous les articles</h2><span class="cnt" id="cnt">82 articles</span></div>
+<div class="grid" id="grid">
+
+  <article class="card" data-t="modern boho collection automne hiver actualites">
+    <a class="ph" href="#"><img src="https://www.vanessabruno.fr/img/uploads/cms_page/447/20032086246a915a04657ae.jpg" alt="Modern Boho"></a>
+    <p class="cat">Actualit&eacute;s</p><h3>Modern Boho</h3>
+    <div class="date">28/08/26</div><div class="desc">D&eacute;couvrez la nouvelle collection Automne-Hiver &lsquo;26</div>
+    <a class="lire" href="#">Lire la suite</a>
+  </article>
+
+  <article class="card" data-t="mon journal de cadaques actualites voyage">
+    <a class="ph" href="#"><img src="https://www.vanessabruno.fr/img/uploads/cms_page/425/11440302756a204a5056d28.jpg" alt="Mon journal de Cadaqu&eacute;s"></a>
+    <p class="cat">Actualit&eacute;s</p><h3>&ldquo;Mon journal de Cadaqu&eacute;s&rdquo;</h3>
+    <div class="date">03/06/26</div><div class="desc">Un carnet d&rsquo;&eacute;t&eacute; sur la Costa Brava</div>
+    <a class="lire" href="#">Lire la suite</a>
+  </article>
+
+  <article class="card" data-t="le savoir faire du raphia a madagascar matiere atelier">
+    <a class="ph" href="#"><img src="https://www.vanessabruno.fr/img/uploads/cms_page/443/18437115536a82fbf26790d.png" alt="Le savoir-faire du raphia &agrave; Madagascar"></a>
+    <p class="cat">Savoir-faire</p><h3>Le savoir-faire du raphia &agrave; Madagascar</h3>
+    <div class="date">17/08/26</div><div class="desc">De la palme tress&eacute;e &agrave; la main au sac fini</div>
+    <a class="lire" href="#">Lire la suite</a>
+  </article>
+
+  <article class="card" data-t="le cuir un savoir faire d exception matiere tannerie sac">
+    <a class="ph" href="#"><img src="https://www.vanessabruno.fr/img/uploads/cms_page/446/12469212506a83165f4494d.jpg" alt="Le cuir, un savoir-faire d&rsquo;exception"></a>
+    <p class="cat">Savoir-faire</p><h3>Le cuir, un savoir-faire d&rsquo;exception</h3>
+    <div class="date">17/08/26</div><div class="desc">Tannage, grain et patine, ce qui fait un beau cuir</div>
+    <a class="lire" href="#">Lire la suite</a>
+  </article>
+
+  <article class="card" data-t="comment entretenir et preserver son sac cuir entretien guide">
+    <a class="ph" href="#"><img src="https://www.vanessabruno.fr/img/uploads/cms_page/433/8769635426a79df527c1c5.jpg" alt="Comment entretenir et pr&eacute;server son sac"></a>
+    <p class="cat">Guide d&rsquo;entretien</p><h3>Comment entretenir et pr&eacute;server son sac ?</h3>
+    <div class="date">10/08/26</div><div class="desc">Les gestes simples pour le garder des ann&eacute;es</div>
+    <a class="lire" href="#">Lire la suite</a>
+  </article>
+
+  <article class="card" data-t="l entretien du raphia guide entretien matiere">
+    <a class="ph" href="#"><img src="https://www.vanessabruno.fr/img/uploads/cms_page/430/6496226106a71fa6cbde7f.jpg" alt="L&rsquo;entretien du raphia"></a>
+    <p class="cat">Guide d&rsquo;entretien</p><h3>L&rsquo;entretien du raphia</h3>
+    <div class="date">04/08/26</div><div class="desc">Nettoyer, s&eacute;cher et ranger un sac en raphia</div>
+    <a class="lire" href="#">Lire la suite</a>
+  </article>
+
+  <article class="card" data-t="now is a good time actualites campagne">
+    <a class="ph" href="#"><img src="https://www.vanessabruno.fr/img/uploads/cms_page/420/190783766369f2165fea8d4.jpg" alt="Now is a good time"></a>
+    <p class="cat">Actualit&eacute;s</p><h3>&laquo; Now is a good time &raquo;</h3>
+    <div class="date">29/04/26</div><div class="desc">La campagne Printemps-&Eacute;t&eacute; &lsquo;26</div>
+    <a class="lire" href="#">Lire la suite</a>
+  </article>
+
+  <article class="card" data-t="le jess raphia sac incontournable ete">
+    <a class="ph" href="#"><img src="https://www.vanessabruno.fr/img/uploads/cms_page/414/107390042569cf8a7e382ef.jpg" alt="Le Jess Raphia"></a>
+    <p class="cat">Nos incontournables</p><h3>Le Jess Raphia</h3>
+    <div class="date">03/04/26</div><div class="desc">L&rsquo;allure de l&rsquo;&eacute;t&eacute; en version tress&eacute;e</div>
+    <a class="lire" href="#">Lire la suite</a>
+  </article>
+
+  <article class="card" data-t="entretien du lin guide entretien matiere pret a porter">
+    <a class="ph" href="#"><img src="https://www.vanessabruno.fr/img/uploads/cms_page/276/203078377166bb30157811c.jpg" alt="Entretien du lin"></a>
+    <p class="cat">Guide d&rsquo;entretien</p><h3>Entretien du lin</h3>
+    <div class="date">13/08/24</div><div class="desc">Laver et repasser le lin sans l&rsquo;ab&icirc;mer</div>
+    <a class="lire" href="#">Lire la suite</a>
+  </article>
+
+  <div class="nores" id="nores">Aucun article ne correspond &agrave; cette recherche.</div>
+</div>
+
+<div class="loadmore"><a class="cta_noir" href="#">Voir plus d&rsquo;articles</a></div>
+
+<footer class="vb">Maquette de travail datashake, &agrave; partir de la charte du Journal Vanessa Bruno. Document interne de pr&eacute;sentation.</footer>
+
+<div class="dsbar">
+  <span>Maquette datashake</span>
+  <button id="tgl">Annotations</button>
+</div>
+
+<script>
+/* accordeon, un seul ouvert */
+document.querySelectorAll('.cl_head').forEach(function(b){
+  b.addEventListener('click',function(){
+    var it=b.parentElement, was=it.classList.contains('open');
+    document.querySelectorAll('.cl_item').forEach(function(x){x.classList.remove('open')});
+    if(!was){it.classList.add('open')}
+  });
+});
+/* recherche live */
+var q=document.getElementById('q'), cards=[].slice.call(document.querySelectorAll('.card')), cnt=document.getElementById('cnt'), nores=document.getElementById('nores');
+function filtre(v){
+  v=(v||'').toLowerCase().trim(); var n=0;
+  cards.forEach(function(c){
+    var hay=(c.dataset.t+' '+c.textContent).toLowerCase();
+    var ok=!v||hay.indexOf(v)>-1; c.style.display=ok?'':'none'; if(ok)n++;
+  });
+  cnt.textContent=v?(n+' article'+(n>1?'s':'')+' pour "'+v+'"'):'82 articles';
+  nores.style.display=n?'none':'block';
+}
+q.addEventListener('input',function(){filtre(q.value)});
+document.querySelectorAll('.search_hints button').forEach(function(b){
+  b.addEventListener('click',function(){q.value=b.dataset.q;filtre(b.dataset.q);q.focus()});
+});
+/* annotations */
+document.getElementById('tgl').addEventListener('click',function(){document.body.classList.toggle('annot')});
+if(location.hash.indexOf('annot')>-1||location.search.indexOf('annot')>-1){document.body.classList.add('annot')}
+document.addEventListener('keydown',function(e){if(e.key==='a'){document.body.classList.toggle('annot')}});
+</script>
+</body>
+</html>
